@@ -1,9 +1,9 @@
 # SimpleNoteWebsite
 
 1. Start project:
-   npm install -g concurrently
-   npm install
-   npm start
+-   npm install -g concurrently
+-   npm install
+-   npm start
 
 2. Setup sequelize:
 
