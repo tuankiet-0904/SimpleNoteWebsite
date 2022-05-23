@@ -6,15 +6,9 @@ const router = express.Router()
 router.post('/register', authController.register)
 router.post('/login', authController.login)
 router.get('/verify-email/:email/:authKey', authController.verifyEmail)
-router.post(
-    '/change-password',
-    authController.changePassword,
-)
+router.post('/change-password', authController.changePassword)
 router.post('/forgot-password', authController.forgotPassword)
 router.get('/reset-password/:email/:authKey', authController.resetPassword)
-router.get(
-    '/get-authenticated-user',
-    authController.getAuthenticatedUser,
-)
+router.get('/get-authenticated-user', authController.getAuthenticatedUser)
 
 module.exports = router
