@@ -32,7 +32,7 @@ npx sequelize-cli model:generate --name User --attributes firstName:string,lastN
 
 -   Chạy migrations:
 
-yarn sequelize-cli db:migrate
+npx sequelize-cli db:migrate
 
 -   Gỡ migrations:
 
