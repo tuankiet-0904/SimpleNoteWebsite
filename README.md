@@ -3,6 +3,9 @@
 1. Start project:
 -   npm install -g concurrently
 -   npm install
+-   cd website
+-   npm install
+-   cd ..
 -   npm start
 
 2. Setup sequelize:
