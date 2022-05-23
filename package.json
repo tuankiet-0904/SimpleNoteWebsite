@@ -7,9 +7,6 @@
         "server": "nodemon server.js",
         "website": "npm start --prefix website",
         "start": "concurrently --kill-others-on-fail \" npm run server\" \"npm run website\"",
-        "install-server": "npm install",
-        "install-website": "npm install --prefix website",
-        "install": "concurrently \" npm run install-server\" \"npm run install-website\"",
         "format-code": "prettier --single-quote --semi false --trailing-comma all --tab-width 4 --write \"**/*.{js,json,css,scss}\""
     },
     "repository": {
