@@ -1,11 +1,15 @@
 # SimpleNoteWebsite
 
 1. Start project:
+
 -   npm install -g concurrently
 -   npm install
 -   cd website
 -   npm install
 -   cd ..
+-   Chạy xampp -> mở phpMyAdmin -> Tạo 1 database trống tên simple_note_db
+-   npx sequelize-cli db:migrate
+-   npx sequelize-cli db:seed:all
 -   npm start
 
 2. Setup sequelize:
@@ -59,8 +63,8 @@ npx sequelize-cli db:seed:undo:all/ --seed name-of-seed-as-in-data
 
 5. Reset auto increment in MySQL:
 
--   ALTER TABLE table_name AUTO_INCREMENT = value;
+ALTER TABLE table_name AUTO_INCREMENT = value;
 
 6. Prettier format code:
 
--   npm run format-code
+npm run format-code
