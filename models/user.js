@@ -7,6 +7,9 @@ module.exports = (sequelize, DataTypes) => {
             User.belongsTo(models.Role, { foreignKey: 'role' })
             User.hasOne(models.UserInfo, { foreignKey: 'user_id' })
             User.hasOne(models.AuthKey, { foreignKey: 'user_id' })
+            User.hasMany(models.Category, { foreignKey: 'user_id' })
+            User.hasMany(models.Note, { foreignKey: 'user_id' })
+            User.hasMany(models.Test, { foreignKey: 'user_id' })
         }
     }
     User.init(

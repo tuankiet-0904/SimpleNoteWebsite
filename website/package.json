@@ -1,65 +1,65 @@
 {
-  "name": "website",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.19.3",
-    "axios": "^0.26.1",
-    "back-end": "file:..",
-    "node-sass": "^7.0.1",
-    "query-string": "^7.1.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format-code": "prettier --single-quote --semi false --trailing-comma all --tab-width 4 --write \"**/*.{js,json,css,scss}\""
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AmoryBunzz/SimpleNoteWebsite.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AmoryBunzz/SimpleNoteWebsite/issues"
-  },
-  "homepage": "https://github.com/AmoryBunzz/SimpleNoteWebsite#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format-code"
+    "name": "website",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.2.0",
+        "@testing-library/user-event": "^13.5.0",
+        "antd": "^4.19.3",
+        "axios": "^0.26.1",
+        "back-end": "file:..",
+        "node-sass": "^7.0.1",
+        "query-string": "^7.1.1",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "format-code": "prettier --single-quote --semi false --trailing-comma all --tab-width 4 --write \"**/*.{js,json,css,scss}\""
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AmoryBunzz/SimpleNoteWebsite.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AmoryBunzz/SimpleNoteWebsite/issues"
+    },
+    "homepage": "https://github.com/AmoryBunzz/SimpleNoteWebsite#readme",
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run format-code"
+        }
+    },
+    "devDependencies": {
+        "dotenv-webpack": "^7.1.0",
+        "husky": "^7.0.4",
+        "prettier": "^2.6.1"
     }
-  },
-  "devDependencies": {
-    "dotenv-webpack": "^7.1.0",
-    "husky": "^7.0.4",
-    "prettier": "^2.6.1"
-  }
 }
