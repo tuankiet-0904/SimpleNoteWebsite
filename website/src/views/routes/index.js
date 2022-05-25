@@ -8,6 +8,7 @@ import GuestRoute from './guest-route'
 const Login = loadableComponent(() => import('views/pages/login'))
 const Register = loadableComponent(() => import('views/pages/register'))
 const Profile = loadableComponent(() => import('views/pages/profile'))
+const RandomTest = loadableComponent(() => import('views/pages/random-test'))
 const EditProfile = loadableComponent(() =>
     import('views/pages/profile/edit-profile'),
 )
@@ -27,6 +28,7 @@ function AllRoutes() {
             <Route element={<GuestRoute />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/random-test" element={<RandomTest />} />
             </Route>
 
             <Route
