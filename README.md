@@ -68,3 +68,5 @@ ALTER TABLE table_name AUTO_INCREMENT = value;
 6. Prettier format code:
 
 npm run format-code
+
+abc
