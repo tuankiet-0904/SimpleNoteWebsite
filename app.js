@@ -13,7 +13,7 @@ app.use(
 )
 
 app.use(express.json())
-
+app.use("/api/test", routes.test);
 app.use('/public', express.static('public'))
 
 module.exports = app

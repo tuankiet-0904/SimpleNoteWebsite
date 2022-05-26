@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     class Test extends Model {
         static associate(models) {
             Test.belongsTo(models.User, { foreignKey: 'user_id' })
-            Test.hasMany(models.Note, { foreignKey: 'note_ids' })
+            // Test.hasMany(models.Note, { foreignKey: 'note_ids' })
         }
     }
     Test.init(

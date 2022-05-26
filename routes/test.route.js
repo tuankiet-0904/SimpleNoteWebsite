@@ -3,10 +3,12 @@ const testController = require('../controllers/api/test.controller');
 
 const router = express.Router();
 
-router.get('/test', testController.index);
-router.get('/test/:id', testController.showById);
-router.post('/test', testController.create);
-router.put('/test', testController.update);
-router.delete('/test', testController.destroy);
+router.get('/', testController.index);
+router.get('/:test_id/firstnote', testController.getFirstNoteByTestId);
+router.get('/:test_id/note/:note_id', testController.getNoteOfTest);
+router.get('/:id', testController.showById);
+router.post('/', testController.create);
+router.put('/', testController.update);
+router.delete('/', testController.destroy);
 
 module.exports = router;

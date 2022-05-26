@@ -28,7 +28,7 @@ function AllRoutes() {
             <Route element={<GuestRoute />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/random-test" element={<RandomTest />} />
+                <Route path="/random-test/test/:test_id" element={<RandomTest />} />
             </Route>
 
             <Route

@@ -1,22 +1,22 @@
-const Node = require(process.cwd() + '/models/index').Node;
+const Note = require(process.cwd() + '/models/index').Note;
 
-async function getListNode(){
-    return Node.findAll();
+async function getListNote(){
+    return Note.findAll();
 }
 
-async function getNodeById(node_id){
-    return Node.findOne({where:{id: node_id}})
+async function getNoteById(note_id){
+    return Note.findOne({where:{id: note_id}});
 }
-async function getNodesByCategory(category_id){
-    const listNode = await getListNode();
-    const newListNode = listNode.map(item => {
+async function getNotesByCategory(category_id){
+    const listNote = await getListNote();
+    const newListNote = listNote.map(item => {
         for(var i=0;i<item.category_ids.length;i++){
             if(item.category_ids[i]==category_id){
                 return item;
             }
         }
     });
-    return newListNode;
+    return newListNote;
 }
 
 async function showByCategory(req, res){
@@ -30,8 +30,8 @@ async function showByCategory(req, res){
         
     }
 }
-module.export={
-    getListNode: getListNode,
-    getNodeById: getNodeById,
-    getNodesByCategory: getNodesByCategory
+module.exports = {
+    getListNote: getListNote,
+    getNoteById: getNoteById,
+    getNotesByCategory: getNotesByCategory
 }
