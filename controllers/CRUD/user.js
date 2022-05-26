@@ -13,10 +13,6 @@ const include = [
         required: true,
     },
     {
-        model: models.Wallet,
-        attributes: { exclude: ['id', 'createdAt'] },
-    },
-    {
         model: models.AuthKey,
     },
 ]

@@ -17,9 +17,6 @@ const ChangePassword = loadableComponent(() =>
 
 const NotFound = loadableComponent(() => import('views/pages/404-not-found'))
 const availableRoles = [1, 2]
-// const BASIC_USER_ROLE = 0;
-// const PARKING_LOT_USER_ROLE = 1;
-// const ADMIN_ROLE = 2;
 
 function AllRoutes() {
     return (
