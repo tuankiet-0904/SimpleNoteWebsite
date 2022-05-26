@@ -1,24 +1,35 @@
-import React from "react";
 import "./random-test.scss";
+import React, { useState, useContext } from 'react';
 
 
 function index() {
+  const [sendResultForm, setSendResultForm] = useState({
+    keyword:"",
+    test_id,
+    node_id,
+  });
+  const {keyword} = sendResult;
+  const updateKeyword=(event)=>{
+    setSendResultForm({...sendResult, [event.target.name]: event.target.value });
+  }
   let body=(Math.floor(Math.random() * 2)===1)?(
     <>
       <div>
-        <input type="text" name="name" />
+        <input type="text" name="keyword" value={keyword}  onChange={updateKeyword}/>
       </div>
     </>
   ):(
     <>
       <div>
         <div>
-          <input type="text" name="name" />
-          <input type="text" name="name" />
+          <input type="text" name="keyword" value={keyword}  onChange={updateKeyword}/>
         </div>
       </div>
     </>
   )
+  const sendResult = async (values) => {
+
+  };
 
   return (
     <div className="container">
@@ -37,10 +48,10 @@ function index() {
         </div>
       </div>
       <div className="question-container">
-        <form>
+        <form pre onSubmit={sendResult}>
           {body}
           <label>Xác nhận</label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit"/>
         </form>
       </div>
     </div>

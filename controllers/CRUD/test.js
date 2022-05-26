@@ -21,7 +21,7 @@ async function destroy(test_id) {
 }
 
 module.exports = {
-    getListText: index,
+    getListTest: index,
     getTestById: showByTestId,
     addNewTest: create,
     updateTest: update,
