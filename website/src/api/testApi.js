@@ -9,6 +9,10 @@ const testApi = {
         const url = `/api/test/${id}`
         return axiosClient.get(url)
     },
+    create:(data) =>{
+        const url = `/api/test/`
+        return axiosClient.post(url, data)
+    },
     update: (data) => {
         const url = `/api/test`
         return axiosClient.patch(url, data)
