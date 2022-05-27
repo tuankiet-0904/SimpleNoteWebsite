@@ -19,7 +19,7 @@ const testApi = {
     },
     
     getFirstNote: (test_id) => {
-        const url = `/api/test/getFirstnote`
+        const url = `/api/test/${test_id}/getFirstnote`
         return axiosClient.get(url)
     },
     getNote: (test_id, note_id) => {
