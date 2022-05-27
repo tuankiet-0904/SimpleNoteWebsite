@@ -25,6 +25,24 @@
 .register-img-background {
     position: relative;
 }
+.register-img-background h1 {
+    position: fixed;
+    top: 40%;
+    left: 10%;
+    color: #41bc3f;
+    font-weight: bolder;
+    font-size: 65px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.register-img-background p {
+    position: fixed;
+    top: 60%;
+    left: 17%;
+    color: black;
+    font-weight: 500;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
 .register-img-background .img-background {
     position: fixed;
     bottom: 0;

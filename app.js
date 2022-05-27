@@ -16,4 +16,8 @@ app.use(express.json())
 app.use("/api/test", routes.test);
 app.use('/public', express.static('public'))
 
+app.use('/api/auth', routes.auth)
+app.use('/api/upload', routes.upload)
+app.use('/api/users', routes.user)
+
 module.exports = app

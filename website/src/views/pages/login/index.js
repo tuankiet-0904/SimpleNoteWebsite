@@ -29,9 +29,9 @@ function Login() {
         try {
             const response = await auth.login(values)
             if (response.request.status === 200) {
+                console.log(response)
                 setToken(response.data.token)
-                localStorage.setItem('token', response.data.token)
-                navigate('/profile')
+                navigate('/top-page')
                 alert(response.data.message)
             }
         } catch (error) {
@@ -55,11 +55,9 @@ function Login() {
         <div className="login-container-main">
             <div className="login-card">
                 <div className="login-img-background">
-                    <img
-                        className="img-background"
-                        src={background}
-                        alt={'backgound'}
-                    />
+                    {/* <img className="img-background" src={background} alt={'backgound'} /> */}
+                    <h1>シンプルノート</h1>
+                    <p>外国語をより簡単に学ぶ。</p>
                 </div>
                 <div className="login-container-sub">
                     <div className="login-img-content"></div>

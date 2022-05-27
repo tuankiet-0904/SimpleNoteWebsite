@@ -15,12 +15,11 @@ const EditProfile = loadableComponent(() =>
 const ChangePassword = loadableComponent(() =>
     import('views/pages/change-password'),
 )
+const CreateNote = loadableComponent(() => import('views/pages/create-note'))
+const TopPage = loadableComponent(() => import('views/pages/top-page'))
 
 const NotFound = loadableComponent(() => import('views/pages/404-not-found'))
 const availableRoles = [1, 2]
-// const BASIC_USER_ROLE = 0;
-// const PARKING_LOT_USER_ROLE = 1;
-// const ADMIN_ROLE = 2;
 
 function AllRoutes() {
     return (
@@ -45,6 +44,10 @@ function AllRoutes() {
                 <Route
                     path="/profile/edit"
                     element={<MainLayout component={EditProfile} />}
+                />
+                <Route
+                    path="/top-page"
+                    element={<MainLayout component={TopPage} />}
                 />
             </Route>
             <Route path="*" element={<NotFound />} />
