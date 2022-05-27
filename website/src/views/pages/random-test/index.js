@@ -7,59 +7,58 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Index(props) {
+  var duration=0;
+  const [displayDuration, setDisplayDuration] = useState(0);
   const navigate = useNavigate();
   var {test_id} = useParams();
   const [uiStatus, setUiStatus] = useState({
     classOfFlipCard: "flip-card-inner",
     waitResult: false,
     submitStatus: false,
-    result: false
+    result: false,
   });
+
+  const increment = () => {
+    ++duration;
+    setDisplayDuration(duration);
+  }
   const [mainDataForm, setMainDataForm] = useState({
     keyword:"",
     test_id:test_id,
     note_id:null,
+    duration:0
   });
   const [note, setNote] = useState({});
   const [nextNote, setNextNote] = useState({});
   useEffect(() => {
     axios.get(`http://localhost:8000/api/test/${test_id}/firstnote`).then((res) => {
       const note = res.data.note;
+      if(!note) navigate("/404/");
       setNote(note);
       setMainDataForm({...mainDataForm, ["note_id"]: note.id});
     })
+    setInterval(increment, 1000);
   },[]);
   var {keyword} = mainDataForm;
   const updateKeyword=(event)=>{
     setMainDataForm({...mainDataForm, [event.target.name]: event.target.value });
     console.log(keyword);
   }
-  let answerBox=(Math.floor(Math.random() * 2)===1)?(
-    <>
-      <div>
-        <input type="text" name="keyword" value={keyword}  onChange={updateKeyword} placeholder="回答"　required/>
-      </div>
-    </>
-  ):(
-    <>
-      <div>
-        <div>
-          <input type="text" name="keyword" value={keyword}  onChange={updateKeyword}　placeholder="回答"　required/>
-        </div>
-      </div>
-    </>
-  )
-  const sendResult = (event) => {
+  const sendResult = (event, duration) => {
     event.preventDefault();
+    console.log(displayDuration)
+    setMainDataForm({...mainDataForm, [duration]: displayDuration});
     axios.put(`http://localhost:8000/api/test/`, mainDataForm).then((res) => {
       setNextNote(res.data.newNote);
       setUiStatus({...uiStatus, ["result"]: res.data.result, ["classOfFlipCard"]: "flip-card-inner-after-submit", ["submitStatus"]: true});
-      // setUiStatus({...uiStatus, ["submitStatus"]: true});
     })
   };  
 
   const nextQuestion = (event) =>{
-    if(!nextNote) navigate("/home")
+    if(!nextNote) {
+      navigate(`/test/${mainDataForm.test_id}`);
+      return;
+    }
     setNote(nextNote);
     setMainDataForm({...mainDataForm, ["keyword"]:"", ["note_id"]:nextNote.id});
     setUiStatus({...uiStatus, ["result"]: false, ["classOfFlipCard"]: "flip-card-inner", ["submitStatus"]: false});
@@ -68,6 +67,7 @@ function Index(props) {
   return (
     <>
       <div className="login-container-main">
+      <div id="timing">{displayDuration}</div>
         <div className="login-card">
           <div className="login-container-sub">
             <div className="container-parent">

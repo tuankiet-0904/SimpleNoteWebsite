@@ -15,11 +15,11 @@ async function index(req, res){
 async function showById(req, res){
     try {
         if(!req.params.id){
-            return res.status(404).json({success: false, message: "Test id not found"});
+            return res.json({success: false, message: "Test id not found"});
         }
         const test = await getTestById(req.params.id);
         if(!test) 
-            return res.status(404).json({success: false, message: "Test not found"});
+            return res.json({success: false, message: "Test not found"});
         res.json({success:true, test});
     } catch (error) {
         console.log(error);
@@ -73,13 +73,13 @@ async function create(req, res){
     }
 }
 async function update(req, res){
-    const {keyword, note_id, test_id} = req.body;
+    const {keyword, note_id, test_id, duration} = req.body;
     try {
         if(!keyword || !note_id || !test_id)
         return res.json({success:false, message: "Bad request question"});
         const note = await getNoteById(note_id);
         if(!note) return res.json({success:false, message: "Note not found"});
-        const test = await getTestById(test_id);
+        var test = await getTestById(test_id);
         if(!test) return res.json({success:false, message:"Test not found"});
         var result = false;
         var isEnd = false;
@@ -88,7 +88,8 @@ async function update(req, res){
         if (!list.includes(parseInt(note_id)))
             return res.json({success:false, message:"Note not found in test"});
         if(note.keyword == keyword){
-            test.accuracy+=1/lengthOfTest;
+            test.accuracy+=1;
+            test.duration=duration;
             result=true;
         }
         var newNote = null;
@@ -101,6 +102,7 @@ async function update(req, res){
                 isEnd = true;
             }
         }
+        test.save();
         await updateTest(test);
         return res.json({success:true, result, newNote, isEnd});
     } catch (error) {
@@ -136,12 +138,14 @@ async function getNoteOfTest(req, res){
 async function getFirstNoteByTestId(req, res){
     try {
         const test = await getTestById(req.params.test_id);
-        if(!test) return res.status(404).json({success:false, message:"test not found"})
+        if(!test) return res.json({success:false, message:"test not found"})
+        test.accuracy=0;
+        await test.save();
         list = JSON.parse(JSON.parse(test.note_ids));
-        if(!list[0]) return res.status(404).json({success:false, message:"Note not found in test"});
+        if(!list[0]) return res.json({success:false, message:"Note not found in test"});
         const note = await getNoteById(list[0]);
         if (!note)
-            return res.status(404).json({success:false, message:"Note not found"});
+            return res.json({success:false, message:"Note not found"});
         return res.json({success:true, note});
     } catch (error) {
         console.log(error);

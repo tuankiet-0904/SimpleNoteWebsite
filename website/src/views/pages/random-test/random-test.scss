@@ -2,6 +2,17 @@
     width: 600px;
     margin: 0 auto;
 }
+#timing{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 40px;
+    color: red;
+    width: 200px;
+    border: 3px solid red;
+    text-align: center;
+    font-weight: bold;
+}
 .flip-card {
     background-color: transparent;
     width:500px;
@@ -16,7 +27,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.1s;
     transform-style: preserve-3d;
 }
 
@@ -47,12 +58,13 @@
 
 .flip-card-back {
     background-color: #99FFFF;
-    padding-top: 50px;
+    padding-top: 70px;
     color: white;
     transform: rotateY(180deg);
 }
 .flip-card-back h1{
     font-size: 100px;
+    padding-bottom: 20px;
 }
 .flip-card-back p{
     color: black;
@@ -142,6 +154,21 @@
     width: 100%;
     height: 80vh;
     padding: 0 2rem;
+}
+.login-container-sub-result {
+    width: 100%;
+    height: 80vh;
+    padding: 50px;
+    position: relative;
+}
+.login-container-sub-result h2{
+    text-align: center;
+    margin-bottom: 70px;
+}
+#image-site{
+    position: absolute;
+    right: 10px;
+    top: 110px;
 }
 
 

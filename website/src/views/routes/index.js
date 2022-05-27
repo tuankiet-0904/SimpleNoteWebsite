@@ -9,6 +9,7 @@ const Login = loadableComponent(() => import('views/pages/login'))
 const Register = loadableComponent(() => import('views/pages/register'))
 const Profile = loadableComponent(() => import('views/pages/profile'))
 const RandomTest = loadableComponent(() => import('views/pages/random-test'))
+const ResultTest = loadableComponent(() => import('views/pages/random-test/result'))
 const EditProfile = loadableComponent(() =>
     import('views/pages/profile/edit-profile'),
 )
@@ -24,6 +25,10 @@ const availableRoles = [1, 2]
 function AllRoutes() {
     return (
         <Routes>
+            <Route>
+                <Route path="/random-test/test/:test_id" element={<RandomTest />} />
+                <Route path="/test/:test_id" element={<ResultTest />} />
+            </Route>
             <Route element={<GuestRoute />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

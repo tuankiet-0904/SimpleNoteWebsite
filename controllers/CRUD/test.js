@@ -12,8 +12,8 @@ async function create(newTest) {
     return Test.create(newTest);
 }
 
-async function update(updateTest, test_id) {
-    return Test.update(updateTest, { where: { id: test_id } })
+async function update(updateTest) {
+    return Test.update(updateTest, { where: { id: updateTest.id } })
 }
 
 async function destroy(test_id) {
