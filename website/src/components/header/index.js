@@ -48,8 +48,6 @@ function Header() {
             case 1:
                 return 'Basic User'
             case 2:
-                return 'Parking-lot User'
-            case 3:
                 return 'Admin'
             default:
                 return 'Another'
