@@ -13,12 +13,49 @@
     justify-content: center;
     flex-direction: column;
 }
+.button-add {
+  left: 87.5%;
+  top: 0%;
+  height: 5vh;
+  width: 14vw;
+  border-radius: 100px;
+  margin-left: 70%;
+  margin-top:15px;
+  button {
+      height: 5vh;
+      width: 14vw;
+      background-color: #fff;
+      border-radius: 100px;
+      border: none;
+
+      transform: translateY(-50%);
+      color: black;
+
+      .icon {
+          margin-right: 0.5vw;
+          margin-top: 0.5vh;
+      }
+  }
+
+  button:hover {
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+      background-color: #b4e2b3;
+  }
+}
 .wrapper {
+<<<<<<< Updated upstream
     border-radius: 20px;
     width: 90%;
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
+=======
+  border-radius: 20px;
+  width: 90%;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+>>>>>>> Stashed changes
 }
 
 .list-note {
@@ -70,6 +107,7 @@
 }
 
 .back {
+<<<<<<< Updated upstream
     white-space: normal;
     background-color: rgb(185, 217, 249);
     color: rgb(1, 1, 1);
@@ -78,3 +116,13 @@
     justify-content: center;
     transform: rotateY(180deg);
 }
+=======
+  white-space: normal;
+  background-color: rgb(185, 217, 249);
+  color: rgb(1, 1, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+>>>>>>> Stashed changes
