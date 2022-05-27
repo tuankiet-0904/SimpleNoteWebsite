@@ -1,34 +1,28 @@
 import { useNavigate } from 'react-router-dom'
-import { Form, Input, Button, Select } from 'antd'
+import { Form, Input, Button } from 'antd'
 import {
     UserOutlined,
     UnlockOutlined,
     MailOutlined,
-    SettingOutlined,
 } from '@ant-design/icons'
 import messages from 'assets/lang/messages'
 import auth from 'api/auth'
 
-import background from 'assets/images/background.png'
 import avatar from 'assets/images/avatar.svg'
 
 import './register.scss'
 
-const { Option } = Select
-
 function Register() {
     const navigate = useNavigate()
     const handleSubmit = async (values) => {
-        // try {
-        //   values.role = parseInt(values.role);
-        //   const response = await auth.register(values);
-        //   alert(response.data.message);
-        //   navigate('/login');
-        // } catch (error) {
-        //   //TODO: hiển bị thông báo theo từng error code (error.request.status === 404)
-        //   alert(error.response.data.message);
-        // }
-        console.log(values)
+        try {
+          const response = await auth.register(values);
+          alert(response.data.message);
+          navigate('/login');
+        } catch (error) {
+          //TODO: hiển bị thông báo theo từng error code (error.request.status === 404)
+          alert(error.response.data.message);
+        }
     }
     return (
         <div className="register-container-main">
@@ -102,32 +96,6 @@ function Register() {
                                     />
                                 </Form.Item>
                             </div>
-
-                            {/* <div className="input-div role">
-                                <i>
-                                    <SettingOutlined />
-                                </i>
-                                <Form.Item
-                                    className="form-item"
-                                    name="role"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'mời chọn role',
-                                        },
-                                    ]}
-                                >
-                                    <Select
-                                        defaultValue="Role"
-                                        className="input role"
-                                    >
-                                        <Option value="1">Basic user</Option>
-                                        <Option value="2">
-                                            Pakinglot user
-                                        </Option>
-                                    </Select>
-                                </Form.Item>
-                            </div> */}
 
                             <div className="input-div password">
                                 <i>

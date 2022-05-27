@@ -6,7 +6,6 @@ import messages from 'assets/lang/messages'
 import auth from 'api/auth'
 import useAuth from 'hooks/useAuth'
 
-import background from 'assets/images/background.png'
 import avatar from 'assets/images/avatar.svg'
 
 import './login.scss'

@@ -1,5 +1,4 @@
 import axiosClient from 'api/axiosClient'
-import { useNavigate } from 'react-router-dom'
 import { createContext, useState, useEffect, useMemo } from 'react'
 import auth from 'api/auth'
 
@@ -21,8 +20,6 @@ export const AuthProvider = ({ children }) => {
         () => ({ token, setToken, user, setUser, collapsed, setCollapsed }),
         [token, setToken, user, setUser, collapsed, setCollapsed],
     )
-
-    const navigate = useNavigate()
 
     useEffect(() => {
         if (token !== 'null') {
@@ -47,9 +44,8 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem('token', null)
             localStorage.setItem('user', null)
             localStorage.setItem('role', null)
-            navigate('/login')
         }
-    }, [token, navigate])
+    }, [token])
 
     return (
         <UserContext.Provider value={providerValue}>

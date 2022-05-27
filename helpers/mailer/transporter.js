@@ -35,7 +35,7 @@ const createContent = (email, option, authKey) => {
             <p>If you not doing this, you can just ignore this message!</p>
             <br>
             <p>Thank you,</p>
-            <p>--- VeXeDienTuBKDN - AwesomeDevTeam ---</p>
+            <p>--- SimpleNoteWebsite ---</p>
             `
     }
 
@@ -51,7 +51,7 @@ const createContent = (email, option, authKey) => {
             <p>If you not doing this, you can just ignore this message!</p>
             <br>
             <p>Thank you,</p>
-            <p>--- VeXeDienTuBKDN - AwesomeDevTeam ---</p>
+            <p>--- SimpleNoteWebsite ---</p>
             `
     }
 }
