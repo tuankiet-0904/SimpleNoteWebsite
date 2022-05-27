@@ -17,16 +17,29 @@ const ChangePassword = loadableComponent(() =>
 )
 const CreateNote = loadableComponent(() => import('views/pages/create-note'))
 const TopPage = loadableComponent(() => import('views/pages/top-page'))
-
+const AddCategory = loadableComponent(() => import('views/pages/top-page/add'));
 const NotFound = loadableComponent(() => import('views/pages/404-not-found'))
 const availableRoles = [1, 2]
 
 function AllRoutes() {
     return (
-        <Routes>
+            <Routes>
+                <Route
+            path="top-page/add"
+            element={<MainLayout component={AddCategory} />}
+            />
+            <Route
+                    path="/create-note"
+                    element={<MainLayout component={CreateNote} />}
+                />
+            <Route
+                    path="/top-page"
+                    element={<MainLayout component={TopPage} />}
+                />
             <Route element={<GuestRoute />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                
                 <Route
                     path="/change-password"
                     element={<MainLayout component={ChangePassword} />}
@@ -39,10 +52,7 @@ function AllRoutes() {
                     path="/profile/edit"
                     element={<MainLayout component={EditProfile} />}
                 />
-                <Route
-                    path="/create-note"
-                    element={<MainLayout component={CreateNote} />}
-                />
+                
             </Route>
 
             <Route
@@ -60,10 +70,7 @@ function AllRoutes() {
                     path="/profile/edit"
                     element={<MainLayout component={EditProfile} />}
                 />
-                <Route
-                    path="/top-page"
-                    element={<MainLayout component={TopPage} />}
-                />
+                
             </Route>
             <Route path="*" element={<NotFound />} />
         </Routes>

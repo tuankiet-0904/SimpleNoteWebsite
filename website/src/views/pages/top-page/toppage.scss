@@ -1,17 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    // font-size: 1.1vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  // font-size: 1.1vh;
 }
 .container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.button-add {
+  left: 87.5%;
+  top: 0%;
+  height: 5vh;
+  width: 14vw;
+  border-radius: 100px;
+  margin-left: 70%;
+  margin-top:15px;
+  button {
+      height: 5vh;
+      width: 14vw;
+      background-color: #fff;
+      border-radius: 100px;
+      border: none;
+
+      transform: translateY(-50%);
+      color: black;
+
+      .icon {
+          margin-right: 0.5vw;
+          margin-top: 0.5vh;
+      }
+  }
+
+  button:hover {
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+      background-color: #b4e2b3;
+  }
 }
 .button-add {
   left: 87.5%;
@@ -44,69 +73,76 @@
 }
 .wrapper {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     border-radius: 20px;
     width: 90%;
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
 =======
+=======
+>>>>>>> Stashed changes
   border-radius: 20px;
   width: 90%;
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
 .list-note {
-    overflow: auto;
-    white-space: nowrap;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .note-item {
-    width: 200px;
-    height: 300px;
-    margin: 10px;
-    display: inline-block;
-    text-align: center;
-    perspective: 1000px;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  perspective: 1000px;
 }
 
 .inner {
-    position: relative;
-    width: 200px;
-    height: 300px;
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .note-item:hover .inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .front,
 .back {
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .front {
-    background-color: rgb(249, 207, 207);
-    color: black;
+  background-color: rgb(249, 207, 207);
+  color: black;
 }
 
 .back {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     white-space: normal;
     background-color: rgb(185, 217, 249);
@@ -117,6 +153,8 @@
     transform: rotateY(180deg);
 }
 =======
+=======
+>>>>>>> Stashed changes
   white-space: normal;
   background-color: rgb(185, 217, 249);
   color: rgb(1, 1, 1);
@@ -124,5 +162,9 @@
   align-items: center;
   justify-content: center;
   transform: rotateY(180deg);
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
 }
 >>>>>>> Stashed changes

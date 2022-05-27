@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import './toppage.scss'
 function Toppage() {
     const listnode = [
@@ -66,6 +67,13 @@ import { PlusCircleOutlined } from '@ant-design/icons'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Toppage() {
+=======
+import './toppage.scss';
+import { PlusCircleOutlined } from '@ant-design/icons'
+import { Link, useNavigate } from 'react-router-dom'
+
+function Toppage() {
+>>>>>>> Stashed changes
   const navigate = useNavigate()
   const onClickHandler = () => navigate('/top-page/add')
 
@@ -128,27 +136,37 @@ function Toppage() {
               <div className="inner">
                 <div className="front">
                   <h1>{item.keyword}</h1>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 </div>
-            </div>
-            <div className="wrapper">
-                <h1 style={{ fontSize: '20px' }}>Category 2</h1>
-                <div className="list-note">
-                    {listnode.map((item) => (
-                        <div className="note-item" key={item.id}>
-                            <div className="inner">
-                                <div className="front">
-                                    <h1>{item.keyword}</h1>
-                                </div>
-                                <div className="back">
-                                    <p>{item.memo}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                <div className="back">
+                  <p>{item.memo}</p>
                 </div>
+              </div>
             </div>
+          ))}
         </div>
-    )
+      </div>
+      <div className="wrapper">
+        <h1 style={{ fontSize: '20px' }}>Category 2</h1>
+        <div className="list-note">
+          {listnode.map((item) => (
+            <div className="note-item" key={item.id}>
+              <div className="inner">
+                <div className="front">
+                  <h1>{item.keyword}</h1>
+                </div>
+                <div className="back">
+                  <p>{item.memo}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
-export default Toppage
+export default Toppage;
