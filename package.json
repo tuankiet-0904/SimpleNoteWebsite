@@ -38,14 +38,10 @@
         "mysql2": "^2.3.3",
         "nodemailer": "^6.7.3",
         "nodemon": "^2.0.15",
-<<<<<<< Updated upstream
         "react": "^18.1.0",
         "react-color": "^2.19.3",
         "react-dom": "^18.1.0",
         "react-scripts": "^5.0.1",
-=======
-        "react-color": "^2.19.3",
->>>>>>> Stashed changes
         "sequelize": "^6.17.0",
         "sequelize-cli": "^6.4.1",
         "uuid": "^8.3.2"

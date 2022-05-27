@@ -38,19 +38,18 @@
 
                     &__radio-button {
                         margin: auto;
-                        
-                        &__data{
+
+                        &__data {
                             display: grid;
                             grid-template-columns: 50% 50%;
                             .radio {
                                 margin-top: 10px;
-                                
-                            }     
-                            .h1{
+                            }
+                            .h1 {
                                 margin-top: 15px;
                                 color: rgb(245, 10, 10);
                             }
-                        } 
+                        }
                     }
 
                     .span {
@@ -72,7 +71,7 @@
                     input {
                         margin-left: -20px;
                         height: 5vh !important;
-                        width :42vh;
+                        width: 42vh;
                     }
 
                     input:hover {
@@ -83,14 +82,14 @@
                         box-shadow: 0 0 3px #41bc3f !important;
                         border-color: #41bc3f !important;
                     }
-                    .TwitterPicker{
+                    .TwitterPicker {
                         margin-left: -20px;
                         box-shadow: 0 0 3px #41bc3f;
                     }
                 }
             }
             &__service {
-                margin-top:-100px;
+                margin-top: -100px;
             }
         }
 
@@ -137,17 +136,17 @@
     margin: 5rem auto;
     display: flex;
     justify-content: space-between;
-  }
-  
-  .form-field {
+}
+
+.form-field {
     flex: 2;
-  }
-  .output {
+}
+.output {
     margin-left: 3rem;
     flex: 1;
-  }
-  .form-field label,
-  h2 {
+}
+.form-field label,
+h2 {
     margin: 0;
     font-weight: 500;
     color: rgb(245, 10, 10);
@@ -155,52 +154,52 @@
 
     font-size: 1.1rem;
     width: 11vw;
-  }
-  
-  input {
+}
+
+input {
     height: 35px;
     width: 100%;
     padding: 7px;
     outline: none;
     border-radius: 5px;
     border: 1px solid rgb(220, 220, 220);
-  }
-  
-  input:focus {
+}
+
+input:focus {
     border: 1px solid rgb(11, 12, 12);
-  }
-  
-  .services {
+}
+
+.services {
     display: flex;
     justify-content: space-between;
-  }
-  .first-division {
+}
+.first-division {
     display: flex;
     flex-direction: column;
     margin: 0 5px 0.5rem 0;
     width: 100%;
-  }
-  button {
+}
+button {
     background: none;
     outline: none;
     cursor: pointer;
     font-weight: 500;
     border-radius: 2px;
     padding: 5px 10px;
-  }
-  .first-division button {
+}
+.first-division button {
     align-self: flex-start;
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
     color: rgb(0, 208, 255);
     border: 1px solid rgb(0, 208, 255);
-  }
-  
-  .second-division button {
+}
+
+.second-division button {
     color: red;
     border: 1px solid red;
-  }
+}
 
 .ant-input-focused,
 .ant-input:focus {

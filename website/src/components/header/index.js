@@ -19,7 +19,6 @@ function Header() {
     const { user, setToken } = useAuth()
     const avatarURL = process.env.REACT_APP_API_URL + user.UserInfo?.avatar
 
-
     const navigate = useNavigate()
     const handleLogout = () => {
         setToken('null')
