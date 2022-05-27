@@ -31,13 +31,13 @@ function Header() {
                 onClick={onClick}
             >
                 <Menu.Item key="1">
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/profile">プロフィール</Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                    <Link to="/change-password">Đổi mật khẩu</Link>
+                    <Link to="/change-password">パスワード変更</Link>
                 </Menu.Item>
                 <Menu.Item key="3" onClick={handleLogout}>
-                    Đăng xuất
+                    ログアウト
                 </Menu.Item>
             </Menu>
         )
