@@ -75,28 +75,34 @@ async function create(req, res){
 async function update(req, res){
     const {keyword, note_id, test_id} = req.body;
     try {
-        
         if(!keyword || !note_id || !test_id)
         return res.json({success:false, message: "Bad request question"});
-        const note = await getNoteById({where: {id: note_id}});
+        const note = await getNoteById(note_id);
         if(!note) return res.json({success:false, message: "Note not found"});
         const test = await getTestById(test_id);
         if(!test) return res.json({success:false, message:"Test not found"});
-        var list = JSON.parse(test.note_ids);
+        var result = false;
+        var isEnd = false;
+        var list = JSON.parse(JSON.parse(test.note_ids));
         var lengthOfTest = list.length;
-        if (!list.includes(note_id))
+        if (!list.includes(parseInt(note_id)))
             return res.json({success:false, message:"Note not found in test"});
-        if(note.keyword == keyword)
+        if(note.keyword == keyword){
             test.accuracy+=1/lengthOfTest;
+            result=true;
+        }
         var newNote = null;
         for(var i=0;i<lengthOfTest;i++){
             if(list[i]==note_id && i < lengthOfTest-1){
-                newNote = await getNoteById({where:{id: list[i+1]}});
+                newNote = await getNoteById(list[i+1]);
                 break;
+            }
+            else if(i == lengthOfTest-1){
+                isEnd = true;
             }
         }
         await updateTest(test);
-        return res.json({success:true, newNote});
+        return res.json({success:true, result, newNote, isEnd});
     } catch (error) {
         console.log(error);
         res.status(500).json({success:false, message: "Internal server error"});
