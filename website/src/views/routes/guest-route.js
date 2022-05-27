@@ -4,7 +4,7 @@ import useAuth from 'hooks/useAuth'
 
 const GuestRoute = () => {
     const { token } = useAuth()
-    return token !== 'null' ? <Navigate to={'/profile'} /> : <Outlet />
+    return token !== 'null' ? <Navigate to={'/top-page'} /> : <Outlet />
 }
 
 GuestRoute.defaultProps = {

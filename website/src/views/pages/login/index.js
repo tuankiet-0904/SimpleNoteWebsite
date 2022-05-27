@@ -31,7 +31,7 @@ function Login() {
             if (response.request.status === 200) {
                 console.log(response)
                 setToken(response.data.token)
-                navigate('/profile')
+                navigate('/top-page')
                 alert(response.data.message)
             }
         } catch (error) {
