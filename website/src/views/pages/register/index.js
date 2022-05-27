@@ -1,10 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Form, Input, Button } from 'antd'
-import {
-    UserOutlined,
-    UnlockOutlined,
-    MailOutlined,
-} from '@ant-design/icons'
+import { UserOutlined, UnlockOutlined, MailOutlined } from '@ant-design/icons'
 import messages from 'assets/lang/messages'
 import auth from 'api/auth'
 
@@ -16,12 +12,12 @@ function Register() {
     const navigate = useNavigate()
     const handleSubmit = async (values) => {
         try {
-          const response = await auth.register(values);
-          alert(response.data.message);
-          navigate('/login');
+            const response = await auth.register(values)
+            alert(response.data.message)
+            navigate('/login')
         } catch (error) {
-          //TODO: hiển bị thông báo theo từng error code (error.request.status === 404)
-          alert(error.response.data.message);
+            //TODO: hiển bị thông báo theo từng error code (error.request.status === 404)
+            alert(error.response.data.message)
         }
     }
     return (
