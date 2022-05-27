@@ -19,25 +19,28 @@ const { Option } = Select
 function Register() {
     const navigate = useNavigate()
     const handleSubmit = async (values) => {
-        try {
-            values.role = parseInt(values.role)
-            const response = await auth.register(values)
-            alert(response.data.message)
-            navigate('/login')
-        } catch (error) {
-            //TODO: hiển bị thông báo theo từng error code (error.request.status === 404)
-            alert(error.response.data.message)
-        }
+        // try {
+        //   values.role = parseInt(values.role);
+        //   const response = await auth.register(values);
+        //   alert(response.data.message);
+        //   navigate('/login');
+        // } catch (error) {
+        //   //TODO: hiển bị thông báo theo từng error code (error.request.status === 404)
+        //   alert(error.response.data.message);
+        // }
+        console.log(values)
     }
     return (
         <div className="register-container-main">
             <div className="register-card">
                 <div className="register-img-background">
-                    <img
+                    {/* <img
                         className="img-background"
                         src={background}
                         alt={'backgound'}
-                    />
+                    /> */}
+                    <h1>シンプルノート</h1>
+                    <p>外国語をより簡単に学ぶ。</p>
                 </div>
                 <div className="register-container-sub">
                     <div className="register-content"></div>
@@ -100,7 +103,7 @@ function Register() {
                                 </Form.Item>
                             </div>
 
-                            <div className="input-div role">
+                            {/* <div className="input-div role">
                                 <i>
                                     <SettingOutlined />
                                 </i>
@@ -124,7 +127,7 @@ function Register() {
                                         </Option>
                                     </Select>
                                 </Form.Item>
-                            </div>
+                            </div> */}
 
                             <div className="input-div password">
                                 <i>
