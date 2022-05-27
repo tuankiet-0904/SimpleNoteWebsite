@@ -15,13 +15,10 @@ const ChangePassword = loadableComponent(() =>
   import('views/pages/change-password')
 );
 const CreateNote = loadableComponent(() => import('views/pages/create-note'));
-const Toppage = loadableComponent(() => import('views/pages/top-page'));
+const TopPage = loadableComponent(() => import('views/pages/top-page'));
 
-const NotFound = loadableComponent(() => import('views/pages/404-not-found'));
-const availableRoles = [1, 2];
-// const BASIC_USER_ROLE = 0;
-// const PARKING_LOT_USER_ROLE = 1;
-// const ADMIN_ROLE = 2;
+const NotFound = loadableComponent(() => import('views/pages/404-not-found'))
+const availableRoles = [1, 2]
 
 function AllRoutes() {
   return (
@@ -42,7 +39,6 @@ function AllRoutes() {
           path="/create-note"
           element={<MainLayout component={CreateNote} />}
         />
-        <Route path="/toppage" element={<MainLayout component={Toppage} />} />
       </Route>
 
       <Route element={<AuthenticatedRoute acceptedRoles={availableRoles} />}>
@@ -55,6 +51,7 @@ function AllRoutes() {
           path="/profile/edit"
           element={<MainLayout component={EditProfile} />}
         />
+        <Route path="/top-page" element={<MainLayout component={TopPage} />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

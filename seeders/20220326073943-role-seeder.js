@@ -9,9 +9,6 @@ module.exports = {
                     name: 'Basic User',
                 },
                 {
-                    name: 'Parking-lot User',
-                },
-                {
                     name: 'Admin',
                 },
             ],
